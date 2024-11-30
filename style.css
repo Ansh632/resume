@@ -1,0 +1,131 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,900&display=swap');
+
+/* Body Styling */
+body {
+  font-family: 'Bodoni Moda', serif;
+  font-size: 1.2rem;
+}
+
+/* Container for the whole page */
+.container {
+  display: flex; /* Enable flex layout */
+  justify-content: space-around; /* Align the grid to the left, or center it if you want */
+  align-items: center; /* Ensure the container fills the entire height */
+  min-height: 100vh; /* Full viewport height */
+  background: linear-gradient(to right, #041308, #0b3317);
+}
+
+/* Styling for the left text section */
+.left-text {
+  width: 30%;
+  line-height: 1.8rem;
+}
+
+.heading {
+  font-size: 3rem;
+  color: white;
+  text-align: center;
+}
+
+.subheading {
+  color: #ddd;
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* Gallery Grid Styling */
+.gallery {
+  display: grid; /* Activate grid layout */
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  grid-auto-rows: 120px; /* Fixed height for grid items */
+  gap: 10px; /* Space between grid items */
+  width: 50%;
+  margin: 0 auto;
+}
+
+/* Box Styles for Each Image */
+.box {
+  position: relative;
+  background-size: cover;
+  background-position: top;
+  color: white;
+  background-color: #222;
+  background-blend-mode: hard-light;
+  transition: all 1s ease-in-out;
+  cursor: pointer;
+}
+
+.box:hover {
+  background-color: #999;
+  background-position: center;
+  box-shadow: 0 0 4px #fff;
+}
+
+.box img {
+  width: 100%; /* Ensure images fill the box */
+  height: 100%; /* Fill height */
+}
+
+/* Styling for row and column spans */
+.row-2 {
+  grid-row: span 2;
+}
+
+.col-2 {
+  grid-column: span 2;
+}
+
+/* Styling for text inside boxes */
+.box h3 {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: aliceblue;
+}
+
+/* Mobile Styling (Below 578px) */
+@media (max-width: 578px) {
+  .gallery {
+    grid-template-columns: 1fr; /* 1 column for mobile */
+    width: 100%; /* Ensure gallery takes full width */
+    margin-top: 20px;
+  }
+
+  .box {
+    height: 150px; /* Adjust height for smaller screens */
+  }
+
+  .box.row-2 {
+    display: none; /* Hide images with class 'row-2' */
+  }
+
+  .heading {
+    font-size: 2rem; /* Smaller heading size */
+  }
+
+  .subheading {
+    font-size: 1rem; /* Smaller subheading */
+  }
+
+  .left-text {
+    width: 100%; /* Text takes full width */
+  }
+
+  .box img {
+    width: 100%; /* Make sure images fill the box */
+    height: auto; /* Maintain aspect ratio */
+  }
+}
